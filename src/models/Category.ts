@@ -1,11 +1,23 @@
+import { Entity, 
+  Column, 
+  PrimaryGeneratedColumn, 
+  CreateDateColumn, 
+  UpdateDateColumn, 
+}from 'typeorm';
+
+@Entity('Category')
 class Category {
-  id: string;
+    @PrimaryGeneratedColumn('uuid')
+    id: string;
 
+  @Column() 
   title: string;
+  
+  @CreateDateColumn()
+    created_at: Date;
 
-  created_at: Date;
-
-  updated_at: Date;
+    @UpdateDateColumn()
+    updated_at: Date;
 }
 
 export default Category;
